@@ -8,7 +8,7 @@ const Blog = () => {
 			<h3>Blog Posts</h3>
 			{posts.map(post => (
 				<div className="card" key={post}>
-					<h4>Post Number one</h4>
+					<h4>Post Number {post}</h4>
 					<p>this is inside the card</p>
 				</div>
 			))}

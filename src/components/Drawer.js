@@ -11,7 +11,6 @@ const Drawer = ({ isActive, setIsActive, children }) => {
 						drag="y"
 						dragConstraints={{ top: 0, bottom: 0 }}
 						onDragEnd={(_, info) => {
-							console.log(info)
 							if (info.offset.y > 100) setIsActive(false)
 						}}
 						className="drawer-wrapper"
