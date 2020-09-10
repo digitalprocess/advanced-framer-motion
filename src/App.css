@@ -395,13 +395,22 @@ tbody tr:last-child {
 }
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
+  width: 100%;
+  height: calc(100% - 2rem);
   bottom: 0;
-  right: 0;
+  left: 0;
+  z-index: 10;
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-grow: 1;
+  pointer-events: none;
+}
+
+.modal .card {
+  pointer-events: all;
+  flex: 1;
+  max-width: 500px;
+  align-self: flex-start;
 }
 
 .loading {
