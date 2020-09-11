@@ -5,6 +5,8 @@ import { usePositionReorder } from './hooks/usePositionReorder'
 import './App.css'
 
 import Blog from './components/Blog'
+import SignUp from './components/SignUp'
+import SignIn from './components/SignIn'
 import Drawer from './components/Drawer'
 import Loader from './components/Loader'
 import Gallery from './components/Gallery'
@@ -40,7 +42,6 @@ function App() {
 										exit={{ opacity: 0, y: 100 }}
 										animate={{ opacity: 1, y: 0 }}
 										className="modal">
-
 										<motion.div layout className="card">
 											<AnimatePresence exitBeforeEnter>
 												{loggedIn === "signin" && (
@@ -63,8 +64,6 @@ function App() {
 							)}
 						</AnimatePresence>
 					</AnimateSharedLayout>
-
-
 					<h3>List of stuff</h3>
 					{order.map((post, i) => (
 						<DragItem
@@ -81,51 +80,6 @@ function App() {
 				</main>
 			</AnimateSharedLayout>
 		</div>
-	)
-}
-
-function SignUp({ setIsLoggedIn }) {
-	return (
-		<motion.div
-			initial={{ opacity: 0 }}
-			exit={{ opacity: 0 }}
-			animate={{ opacity: 1, transition: { delay: 0.3 } }}
-		>
-			<h3>Sign Up</h3>
-			<label htmlFor="email">Email</label>
-			<input id="email" type="text" />
-			<label htmlFor="password">Password</label>
-			<input id="password" type="text" />
-			<br />
-			<button>Sign Up</button>
-			<p>
-				Already have an account?{" "}
-				<button onClick={() => setIsLoggedIn("signin")}>Sign In</button>
-			</p>
-		</motion.div>
-	)
-}
-
-function SignIn({ setIsLoggedIn }) {
-	return (
-		<motion.div
-			initial={{ opacity: 0 }}
-			exit={{ opacity: 0 }}
-			animate={{ opacity: 1, transition: { delay: 0.3 } }}
-		>
-			<h3>Sign In</h3>
-			<label htmlFor="email">Email</label>
-			<input id="email" type="text" />
-			<label htmlFor="password-new">Password</label>
-			<input id="password-new" type="text" />
-			<label htmlFor="password-confirm">Password Confirm</label>
-			<input id="password-confirm" type="text" />
-			<br />
-			<button>Sign In</button>
-			<p>
-				Need an account? <button onClick={() => setIsLoggedIn("signup")}>Sign Up</button>
-			</p>
-		</motion.div>
 	)
 }
 
