@@ -32,6 +32,7 @@ const Drawer = ({ isActive, setIsActive, children }) => {
 					</motion.div>
 					<motion.div
 						className="drawer--background"
+						onClick={() => setIsActive(false)}
 						exit={{ opacity: 0 }}
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}

@@ -14,6 +14,7 @@ import Loader from './components/Loader'
 import Gallery from './components/Gallery'
 import Toggles from './components/Toggles'
 import DragItem from './components/DragItem'
+import TwoWayDrawer from './components/TwoWayDrawer'
 
 function App() {
 	const [isDrawerActive, setIsDrawerActive] = useState(false)
@@ -36,12 +37,26 @@ function App() {
 				<AnimatedRoutes>
 					<RouteTransition path="/about">
 						<div className="layout">
-						<h3>Who we are</h3>
+							<h3>Who we are</h3>
+							<TwoWayDrawer>
+								<p>Hello, what's up?!</p>
+							</TwoWayDrawer>
 						</div>
 					</RouteTransition>
 					<RouteTransition path="/contact">
 						<div className="layout">
-						<h3>Positive Contact!</h3>
+							<h3>Positive Contact!</h3>
+							<motion.div
+								initial={{ x: -200 }}
+								animate={{ x: 200 }}
+								transition={{
+									repeat: Infinity,
+									type: 'spring',
+									repeatDelay: 2,
+									repeatType: 'reverse',
+								}}
+								className="box"
+							/>
 						</div>
 					</RouteTransition>
 					<RouteTransition path="/">

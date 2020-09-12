@@ -427,3 +427,9 @@ tbody tr:last-child {
   flex-direction: column;
 }
 
+.box {
+  background: var(--primary);
+  height: 100px;
+  box-shadow: var(--level-4);
+  width: 100px;
+}
